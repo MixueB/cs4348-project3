@@ -6,3 +6,6 @@ Today I am planning to write a parser class to read the index files. I will also
 
 # 11/30/24 7:25 PM 
 Parsing the file was more difficult than expected. It took a lot of time to parse the bytes in the right spot correctly. The program kept crashing due to parsing into the wrong spot but is now working correctly. Next I will work on connecting the menu to the btree.
+
+# 12/1/24 10:43 AM
+I have started to work on implementing the B Tree functionality and am hoping to finish by later today. Once the B Tree functions are implemented I will also integrate the menu in project3.py.
