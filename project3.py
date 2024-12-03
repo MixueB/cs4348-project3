@@ -63,7 +63,56 @@ def search_command():
             print("Error: Key not found.")
     except ValueError:
         print("Error: Invalid input. Key must be an integer.")
-        
+
+def load_command():
+    global current_btree
+    if not current_btree:
+        print("No index file is currently open.")
+        return
+    file_name = input("Enter the name of the file to load: ").strip()
+    if not os.path.exists(file_name):
+        print("Error: File does not exist.")
+        return
+    try:
+        with open(file_name, "r") as f:
+            for line in f:
+                key, value = map(int, line.strip().split(","))
+                
+                if (not current_btree.search(key)):
+                    current_btree.insert(key, value)
+        save_data()
+        print(f"Loaded data from '{file_name}' into the index file.")
+    except Exception as e:
+        print(f"Error loading file: {e}")
+
+def print_command():
+    global current_btree
+    if not current_btree:
+        print("No index file is currently open.")
+        return
+    for node in current_btree.nodes.values():
+        for key, value in zip(node.keys, node.values):
+            print(f"{key}, {value}")
+
+def extract_command():
+    global current_btree
+    if not current_btree:
+        print("No index file is currently open.")
+        return
+    file_name = input("Enter the name of the file to save to: ").strip()
+    if os.path.exists(file_name):
+        overwrite = input("File exists. Overwrite? (yes/no): ").strip().lower()
+        if overwrite != "yes":
+            return
+    try:
+        with open(file_name, "w") as f:
+            for node in current_btree.nodes.values():
+                for key, value in zip(node.keys, node.values):
+                    f.write(f"{key},{value}\n")
+        print(f"Data extracted to '{file_name}'.")
+    except Exception as e:
+        print(f"Error extracting data: {e}")
+
 def save_data():
     global current_btree
     
@@ -73,7 +122,7 @@ def save_data():
 def main():
     while True:
         print("----------------------\nProject 3 Menu\n----------------------")
-        print(" create\n open\n insert\n search\n quit\n")
+        print(" create\n open\n insert\n search\n load\n print\n extract\n quit\n")
         command = input("Enter a command: ").strip().lower()
         if command == "create":
             create_command()
@@ -83,6 +132,12 @@ def main():
             insert_command()
         elif command == "search":
             search_command()
+        elif command == "load":
+            load_command()
+        elif command == "print":
+            print_command()
+        elif command == "extract":
+            extract_command()
         elif command == "quit":
             print("\nExiting the program")
             break

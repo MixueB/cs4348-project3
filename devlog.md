@@ -9,3 +9,6 @@ Parsing the file was more difficult than expected. It took a lot of time to pars
 
 # 12/1/24 10:43 AM
 I have started to work on implementing the B Tree functionality and am hoping to finish by later today. Once the B Tree functions are implemented I will also integrate the menu in project3.py.
+
+# 12/2/24 6:02 PM
+I have implemented the other menu command functions that were not implemented yesterday. While testing I realized that some of my B Tree functionality was not working correctly, so I fixed this today as well. I initially did not understand what the minumum degree means for the tree but understand now. I will continue to test throughout the week.
