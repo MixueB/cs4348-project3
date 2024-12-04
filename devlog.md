@@ -12,3 +12,6 @@ I have started to work on implementing the B Tree functionality and am hoping to
 
 # 12/2/24 6:02 PM
 I have implemented the other menu command functions that were not implemented yesterday. While testing I realized that some of my B Tree functionality was not working correctly, so I fixed this today as well. I initially did not understand what the minumum degree means for the tree but understand now. I will continue to test throughout the week.
+
+# 12/3/24 9:25 PM
+After more testing today I am happy with my implementation. I tested again with the sample.idx file and did not encounter any issues. I created several other index files for testing and tried different combinations of commands. Today I will add the readme to go over how to run my application.
