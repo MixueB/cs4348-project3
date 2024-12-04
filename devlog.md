@@ -15,3 +15,6 @@ I have implemented the other menu command functions that were not implemented ye
 
 # 12/3/24 9:25 PM
 After more testing today I am happy with my implementation. I tested again with the sample.idx file and did not encounter any issues. I created several other index files for testing and tried different combinations of commands. Today I will add the readme to go over how to run my application.
+
+# 12/3/24 9:45 PM
+I finished adding the readme. I made an edit to it to add a link to the project in Github. 
